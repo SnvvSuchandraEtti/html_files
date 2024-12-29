@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Types and Differences</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            text-align: left;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Variable Types and Differences</h2>
+
+<script>
+    var variableVar = "I am a variable declared with var";
+    let variableLet = "I am a variable declared with let";
+    const variableConst = "I am a variable declared with const";
+
+    document.write("<div class='output'>");
+    document.write("<p><strong>Using var:</strong> " + variableVar + "</p>");
+    document.write("<p><strong>Using let:</strong> " + variableLet + "</p>");
+    document.write("<p><strong>Using const:</strong> " + variableConst + "</p>");
+    document.write("</div>");
+</script>
+
+<div class="output">
+    <p><strong>Explanation:</strong></p>
+    <ul>
+        <li><code>var</code>: Function-scoped, can be redeclared and reassigned.</li>
+        <li><code>let</code>: Block-scoped, can be reassigned, but not redeclared in the same scope.</li>
+        <li><code>const</code>: Block-scoped, cannot be redeclared or reassigned after initialization.</li>
+    </ul>
+</div>
+
+</body>
+</html>

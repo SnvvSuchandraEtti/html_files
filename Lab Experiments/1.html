@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object Manipulation Example</title>
+  <script>
+    let cone = { status: "empty", message: "Fill your cone", bgColor: "cyan", imgSrc: "cone_empty.jpg" };
+
+    function toggleConeStatus() {
+      if (cone.status === "empty") {
+        cone.status = "filled";
+        cone.message = "Eat your cone";
+        cone.bgColor = "pink";
+        cone.imgSrc = "cone_filled.jpg";
+      } else {
+        cone.status = "empty";
+        cone.message = "Fill your cone";
+        cone.bgColor = "cyan";
+        cone.imgSrc = "cone_empty.jpg";
+      }
+      
+      // Update the page with the new object state
+      document.body.style.backgroundColor = cone.bgColor;
+      document.getElementById("status").innerHTML = cone.message;
+      document.getElementById("coneImg").src = cone.imgSrc;
+    }
+  </script>
+</head>
+<body>
+  <h1 align="center">Ice Cream Cone</h1>
+  <button onclick="toggleConeStatus()">Toggle Cone Status</button>
+  <p id="status">Fill your cone</p>
+  <img id="coneImg" src="cone_empty.jpg" height="300px">
+</body>
+</html>

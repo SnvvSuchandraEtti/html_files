@@ -1,0 +1,42 @@
+<html> 
+<head></head> 
+<body> 
+<form name='form1'> 
+<table border=0> 
+<tr> 
+<td><label >name</td> 
+<td><input type='text' value='enter name' name='uname'></td> 
+</tr> 
+<tr> 
+<td><label name='email'>Email</label></td> 
+<td><input type='email' value='@gmail.com'></td> 
+</tr> 
+<tr> 
+<td><label>phone number</td> 
+<td><input type='number' name='phno'></td> 
+</tr> 
+<tr> 
+<td> 
+<input type='button' value='check' onclick="fun1()" > 
+</td> 
+<td><p id='one'></p> 
+</tr> 
+  
+</table> 
+</form> <script> 
+var flag=1; function fun1() 
+{ 
+  	var x=document.form1.uname.value; 
+if(x.length<6){ document.form1.uname.value=null; flag=0; } 
+if(/[a-zA-Z]/.test(x[0]) == false) 
+{ 
+flag=0; document.form1.uname.value=null; 
+} 
+var y=document.form1.phno.value; y=y.toString(); if(y.length != 10){ document.form1.phno.value=null; 
+flag=0; } if(flag==1) document.getElementById('one').innerHTML="<input type='submit'>"; else 
+window.alert('your fields doesnot meet constraints'); 
+ 
+} 
+</script> 
+</body> 
+</html> 

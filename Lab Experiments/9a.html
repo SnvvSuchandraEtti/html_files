@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Printing Loops</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .output {
+      margin-top: 20px;
+    }
+
+    .number-list {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .number {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Number Printing Loops</h1>
+
+  <div class="output">
+    <h2>Using for loop:</h2>
+    <div class="number-list" id="for-loop-output"></div>
+  </div>
+
+  <div class="output">
+    <h2>Using while loop:</h2>
+    <div class="number-list" id="while-loop-output"></div>
+  </div>
+
+  <div class="output">
+    <h2>Using do-while loop:</h2>
+    <div class="number-list" id="do-while-loop-output"></div>
+  </div>
+
+  <script>
+    // Function to get user input
+    function getUserInput(promptMessage) {
+      return parseInt(prompt(promptMessage));
+    }
+
+    // Get user input for loop limit
+    const loopLimit = getUserInput('Enter the loop limit (a number):');
+
+    // Using for loop
+    const forLoopOutput = document.getElementById('for-loop-output');
+    console.log("Using for loop:");
+    for (let i = 1; i <= loopLimit; i++) {
+      console.log(i);
+      const numberDiv = document.createElement('div');
+      numberDiv.classList.add('number');
+      numberDiv.textContent = i;
+      forLoopOutput.appendChild(numberDiv);
+    }
+
+    // Using while loop
+    const whileLoopOutput = document.getElementById('while-loop-output');
+    console.log("\nUsing while loop:");
+    let j = 1;
+    while (j <= loopLimit) {
+      console.log(j);
+      const numberDiv = document.createElement('div');
+      numberDiv.classList.add('number');
+      numberDiv.textContent = j;
+      whileLoopOutput.appendChild(numberDiv);
+      j++;
+    }
+
+    // Using do-while loop
+    const doWhileLoopOutput = document.getElementById('do-while-loop-output');
+    console.log("\nUsing do-while loop:");
+    let k = 1;
+    do {
+      console.log(k);
+      const numberDiv = document.createElement('div');
+      numberDiv.classList.add('number');
+      numberDiv.textContent = k;
+      doWhileLoopOutput.appendChild(numberDiv);
+      k++;
+    } while (k <= loopLimit);
+  </script>
+</body>
+
+</html>

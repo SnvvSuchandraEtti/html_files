@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #212121;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #4caf50;
+      margin-top: 50px;
+    }
+
+    #demo {
+      font-size: 24px;
+      color: #4caf50;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Discover Your Lucky Number</h1>
+  <p id="demo"></p>
+  <label for="number">Enter a Number:</label>
+  <input type="number" id="number" placeholder="Enter a number">
+  <button onclick="createMasterpiece()">Click Here</button>
+
+  <script>
+    function createMasterpiece() {
+      var userNumber = parseInt(document.getElementById("number").value);
+      var masterpiece = "👊 Your Lucky Number: " + userNumber;
+      document.getElementById("demo").innerHTML = masterpiece;
+      console.log(masterpiece);
+      window.alert(masterpiece);
+    }
+  </script>
+</body>
+
+</html>

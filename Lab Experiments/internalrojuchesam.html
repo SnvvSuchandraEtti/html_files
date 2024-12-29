@@ -1,0 +1,22 @@
+<html>
+    <title> Sample Experiment on the declaration </title>
+    <h3>Experiment </h3>
+    <span id="hp_id">this is span tag</span>
+    <p class ="kgf">HTML</p>
+    <p class ="kgf">CSS</p>
+    <p class ="kgf">JS</p>
+    <script>
+        document.getElementById('hp_id').innerHTML ='New Content';
+
+        let ps = document.getElementsByClassName('kgf');
+        console.log(ps);
+        ps[2].innerHTML = 'Javascript';
+        ps[2].style.color = 'red';
+
+        let ps1 = document.getElementsByTagName('p');
+
+        ps1[1].innerHTML = 'CSS style';
+        ps1[1].style.fontSize = '40px';
+    </script>
+</body>
+</html>

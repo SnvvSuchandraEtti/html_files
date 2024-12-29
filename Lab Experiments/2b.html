@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>JavaScript Document Methods</title>
+</head>
+<body>
+<h3>Document Methods Example</h3>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p id="demo"></p>
+<script>
+document.getElementsByTagName("p")[0].innerHTML = "Hello World!";
+document.open();
+document.write("Hello" +"<br>");
+document.getElementById("demo").innerHTML = "Happy"; document.close();
+document.writeln("Hello World!");
+document.writeln("Have a nice day!");
+</script>
+</body> </html>

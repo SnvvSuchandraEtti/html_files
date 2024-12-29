@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JavaScript Program</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #output {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+      text-align: left; /* Adjusted text alignment */
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px; /* Added margin for better spacing */
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript Program</h1>
+  <button onclick="runProgram()">Run Program</button>
+  <div id="output"></div>
+
+  <script>
+    function runProgram() {
+      // Add numbers using parseInt()
+      var num1 = parseInt(prompt("Enter the first number"));
+      var num2 = parseInt(prompt("Enter the second number"));
+      var sum = num1 + num2;
+
+      // Concatenate strings
+      var str1 = "Hello";
+      var str2 = " World!";
+      var resultString = str1 + str2;
+
+      // Display results in alert dialogue box
+      alert("Sum of Numbers: " + sum + "\nConcatenated String: " + resultString);
+
+      // Display results on the page
+      document.getElementById("output").innerHTML = "Sum of Numbers: " + sum + "<br>Concatenated String: " + resultString;
+    }
+  </script>
+</body>
+
+</html>

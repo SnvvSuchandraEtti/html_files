@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Form</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <form name="myform" onsubmit="return validateForm()" method="post">
+        Fname: <input type="text" name="Fname">
+        <p id="fname1" style="display: none; color: rgb(224, 18, 18);">Fill the FName</p>
+        <br/><br/>
+        LName: <input type="text" name="LName">
+        <br/><br/>
+        Gmail: <input type="text" name="Gmail">
+        <br/><br/>
+        PhoneNumber: <input type="text" name="PhoneNumber">
+        <br/><br/>
+        Gender: <input type="text" name="Gender">
+        <br/><br/>
+        HigherEducation: <input type="text" name="HigherEducation">
+        <br/><br/>
+        <input type="submit" value="submit">
+    </form>
+
+<script>
+    function validateForm(){
+        let x = document.forms["myform"]["Fname"].value;
+        let y = document.forms["myform"]["LName"].value;
+        let z = document.forms["myform"]["Gmail"].value;
+        let a = document.forms["myform"]["PhoneNumber"].value;
+        let b = document.forms["myform"]["Gender"].value;
+        let c = document.forms["myform"]["HigherEducation"].value;
+
+        if(x === ""){
+            document.getElementById('fname1').style.display = "block";
+            return false;
+        } else if(y === ""){
+            alert("Fill the Lname");
+            return false;
+        } else if(z === ""){
+            alert("Fill the Gmail");
+            return false;
+        } else if(a === ""){
+            alert("Fill the PhoneNumber");
+            return false;
+        } else if(isNaN(a)){
+            alert("PhoneNumber should contain only numbers");
+            return false;
+        } else if(b === ""){
+            alert("Fill the Gender");
+            return false;
+        } else if(c === ""){
+            alert("Fill the HigherEducation");
+            return false;
+        } else {
+            document.write(x + " " + y + " " + z + " " + a + " " + b + " " + c);
+            return true;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+

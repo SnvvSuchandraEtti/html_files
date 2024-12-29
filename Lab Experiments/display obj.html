@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Entered Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            width: 70%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #displayArea {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        // Function to display the entered text
+        function displayText() {
+            var enteredText = document.getElementById('inputTextArea').value;
+            document.getElementById('displayArea').textContent = enteredText;
+            document.getElementById('inputTextArea').disabled = true; // Disable textarea after displaying
+            document.getElementById('displayButton').disabled = true; // Disable display button after displaying
+        }
+
+        // Function to clear displayed text and allow new input
+        function clearText() {
+            document.getElementById('inputTextArea').value = '';
+            document.getElementById('displayArea').textContent = '';
+            document.getElementById('inputTextArea').disabled = false; // Enable textarea
+            document.getElementById('displayButton').disabled = false; // Enable display button
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>Box Kaaliga undhi Eedhokati Enter Cheyyi Bro!</h2>
+        
+        <!-- Text area for entering text -->
+        <textarea id="inputTextArea" rows="4" placeholder="Enter Cheste Display Cheyyi" autofocus></textarea>
+        
+        <br><br>
+        
+        <!-- Button to display entered text -->
+        <button id="displayButton" onclick="displayText()">Display</button>
+        <!-- Button to clear displayed text and allow new input -->
+        <button onclick="clearText()">Clear</button>
+        
+        <br><br>
+        
+        <!-- Area to display entered text -->
+        <div id="displayArea"></div>
+    </div>
+</body>
+</html>

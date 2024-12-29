@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Name</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #main-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        #date-time {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <h1>The Current Time and Date</h1>
+        <div id="date-time"></div>
+        <script>
+            var ss = new Date();
+            var day = ss.getDay();
+            var d = ss.getDate();
+            var m = ss.getMonth() + 1;
+            var y = ss.getFullYear();
+            var t = ss.getHours();
+            var s = ss.getMinutes();
+            var sec = ss.getSeconds();
+            document.getElementById("date-time").innerHTML = "Date: " + d + "-" + m + "-" + y + "<br>Time: " + t + ":" + s + ":" + sec;
+        </script>
+    </div>
+</body>
+</html>

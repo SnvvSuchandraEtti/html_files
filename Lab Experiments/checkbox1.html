@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tick Checkboxes Upwards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h3 {
+            color: #333;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        // Check checkboxes upwards
+                        for (let i = 0; i < index; i++) {
+                            checkboxes[i].checked = true;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Tick Checkboxes Upwards</h3>
+    <input type="checkbox" id="checkbox1"> Checkbox 1<br>
+    <input type="checkbox" id="checkbox2"> Checkbox 2<br>
+    <input type="checkbox" id="checkbox3"> Checkbox 3<br>
+    <input type="checkbox" id="checkbox4"> Checkbox 4<br>
+    <input type="checkbox" id="checkbox5"> Checkbox 5<br>
+</body>
+
+</html>

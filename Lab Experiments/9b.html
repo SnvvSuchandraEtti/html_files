@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Looping</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .output {
+      margin-top: 20px;
+    }
+
+    .property-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .property {
+      background-color: #2196f3;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Object Looping</h1>
+
+  <script>
+    // Prompt the user for inputs
+    const name = prompt('Enter your name:');
+    const age = prompt('Enter your age:');
+    const city = prompt('Enter your city:');
+    const hobby = prompt('Enter your hobby:');
+
+    // Create an object with user inputs
+    const myObject = {
+      name: name,
+      age: age,
+      city: city,
+      hobby: hobby,
+    };
+
+    // Using for-in loop
+    const forInLoopOutput = document.createElement('div');
+    forInLoopOutput.classList.add('output');
+    forInLoopOutput.innerHTML = '<h2>Using for-in loop:</h2>';
+    document.body.appendChild(forInLoopOutput);
+
+    console.log("Using for-in loop:");
+    for (let key in myObject) {
+      console.log(`${key}: ${myObject[key]}`);
+      const propertyDiv = document.createElement('div');
+      propertyDiv.classList.add('property');
+      propertyDiv.textContent = `${key}: ${myObject[key]}`;
+      forInLoopOutput.appendChild(propertyDiv);
+    }
+
+    // Using for-each loop
+    const forEachLoopOutput = document.createElement('div');
+    forEachLoopOutput.classList.add('output');
+    forEachLoopOutput.innerHTML = '<h2>Using for-each loop:</h2>';
+    document.body.appendChild(forEachLoopOutput);
+
+    console.log("\nUsing for-each loop:");
+    Object.entries(myObject).forEach(([key, value]) => {
+      console.log(`${key}: ${value}`);
+      const propertyDiv = document.createElement('div');
+      propertyDiv.classList.add('property');
+      propertyDiv.textContent = `${key}: ${value}`;
+      forEachLoopOutput.appendChild(propertyDiv);
+    });
+
+    // Using for-of loop
+    const forOfLoopOutput = document.createElement('div');
+    forOfLoopOutput.classList.add('output');
+    forOfLoopOutput.innerHTML = '<h2>Using for-of loop:</h2>';
+    document.body.appendChild(forOfLoopOutput);
+
+    console.log("\nUsing for-of loop:");
+    for (let [key, value] of Object.entries(myObject)) {
+      console.log(`${key}: ${value}`);
+      const propertyDiv = document.createElement('div');
+      propertyDiv.classList.add('property');
+      propertyDiv.textContent = `${key}: ${value}`;
+      forOfLoopOutput.appendChild(propertyDiv);
+    }
+  </script>
+</body>
+
+</html>

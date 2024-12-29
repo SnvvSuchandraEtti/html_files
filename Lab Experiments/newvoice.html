@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text-to-Speech</title>
+</head>
+<body>
+  <textarea id="text" rows="4" cols="50">Enter text here...</textarea><br>
+  <label for="voice-select">Select a voice:</label>
+  <select id="voice-select">
+    <!-- Options for different voices -->
+  </select><br>
+  <button onclick="speak()">Speak</button>
+  <button onclick="download()">Download</button>
+
+  <script>
+    const synth = window.speechSynthesis;
+    let utterance = new SpeechSynthesisUtterance();
+    utterance.lang = 'en-US'; // Set language
+
+    // Populate the voice select dropdown with available voices
+    function populateVoiceList() {
+      let voices = synth.getVoices();
+      let voiceSelect = document.getElementById('voice-select');
+      voices.forEach(voice => {
+        let option = document.createElement('option');
+        option.textContent = ${voice.name} (${voice.lang});
+        option.setAttribute('data-voice', voice.name);
+        voiceSelect.appendChild(option);
+      });
+      // Add a custom lady voice if available
+      let ladyVoiceOption = document.createElement('option');
+      ladyVoiceOption.textContent = 'Lady Voice';
+      ladyVoiceOption.setAttribute('data-voice', 'lady');
+      voiceSelect.appendChild(ladyVoiceOption);
+    }
+
+    populateVoiceList();
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = populateVoiceList;
+    }
+
+    function speak() {
+      let text = document.getElementById('text').value;
+      let selectedVoice = document.getElementById('voice-select').value;
+      let voices = synth.getVoices();
+      let chosenVoice;
+      
+      if (selectedVoice === 'lady') {
+        chosenVoice = voices.find(voice => voice.name.includes('Female')); // Find a suitable female voice
+      } else {
+        chosenVoice = voices.find(voice => voice.name === selectedVoice);
+      }
+
+      utterance.text = text;
+      utterance.voice = chosenVoice;
+      synth.speak(utterance);
+    }
+
+    function download() {
+      let text = document.getElementById('text').value;
+      let blob = new Blob([text], { type: 'text/plain' });
+      let url = URL.createObjectURL(blob);
+      let a = document.createElement('a');
+      a.href = url;
+      a.download = 'text.txt';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function() {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    }
+  </script>
+</body>
+</html>

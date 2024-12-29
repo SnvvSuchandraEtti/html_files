@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment and Decrement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff; /* Primary color */
+        }
+
+        #numberDisplay {
+            font-size: 36px;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: 120px;
+            display: inline-block;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff; /* Primary color */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade of primary color on hover */
+        }
+    </style>
+    <script>
+        // Function to increment the displayed number
+        function increment() {
+            var currentValue = parseInt(document.getElementById('numberDisplay').textContent);
+            document.getElementById('numberDisplay').textContent = currentValue + 1;
+        }
+
+        // Function to decrement the displayed number
+        function decrement() {
+            var currentValue = parseInt(document.getElementById('numberDisplay').textContent);
+            if (currentValue > 0) {
+                document.getElementById('numberDisplay').textContent = currentValue - 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>Increment and Decrement Number</h2>
+
+        <!-- Display area for the number -->
+        <div id="numberDisplay">0</div>
+
+        <!-- Buttons to increment and decrement the number -->
+        <button onclick="increment()">Increment</button>
+        <button onclick="decrement()">Decrement</button>
+    </div>
+</body>
+</html>

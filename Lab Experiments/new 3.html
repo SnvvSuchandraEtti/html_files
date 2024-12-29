@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Pop-up Boxes Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #008080;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f0f0f0;
+        }
+
+        table, th, td {
+            border: 1px solid #008080;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript Pop-up Boxes Example</h1>
+
+    <script>
+        alert("This is an alert box!");
+
+        let userInput = prompt("Please enter something:", "Default Value");
+        document.write("<p>You entered: " + userInput + "</p>");
+
+        let userConfirmed = confirm("Do you want to proceed?");
+        document.write("<p>User confirmed: " + userConfirmed + "</p>");
+    </script>
+
+    <script>
+        let userName = prompt("Enter your name:");
+        let userAge = prompt("Enter your age:");
+        let userSalary = prompt("Enter your salary:");
+
+        document.write("<h2>User Information</h2>");
+        document.write("<table>");
+        document.write("<tr><th>Name</th><th>Age</th><th>Salary</th></tr>");
+        document.write("<tr><td>" + userName + "</td><td>" + userAge + "</td><td>" + userSalary + "</td></tr>");
+        document.write("</table>");
+    </script>
+</div>
+
+<script>
+    // Dynamically generate a random background color
+    document.body.style.backgroundColor = getRandomColor();
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>

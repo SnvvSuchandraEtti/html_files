@@ -1,0 +1,85 @@
+Sure, I've modified and styled the webpage for a cleaner and more organized look. Additionally, I've included some explanations for each section:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Arrays Demo</h2>
+    <p id="demo">Array: </p>
+    <p id="demo1">First Element: </p>
+    <button onclick="myFunction()">Add Kia</button>
+    <p id="demo2">After Adding Kia: </p>
+    <p id="demo3">Search for BMW: </p>
+    <p id="demo4">After Removing Last Element: </p>
+    <p id="demo5">After Sorting: </p>
+
+    <script>
+        // Creation
+        const cars = ["Saab", "Volvo", "BMW"];
+        document.getElementById("demo").innerHTML += cars;
+
+        // Access
+        document.getElementById("demo1").innerHTML += cars[0];
+
+        // Adding function
+        function myFunction() {
+            cars.push("Kia");
+            document.getElementById("demo2").innerHTML = "Array: " + cars;
+        }
+
+        // Searching
+        document.getElementById("demo3").innerHTML += cars.find(checkCar);
+        function checkCar(car) { 
+            return car === "BMW";
+        }
+
+        // Removing last element
+        cars.pop();
+        document.getElementById("demo4").innerHTML += "Array: " + cars;
+
+        // Sorting
+        cars.sort();
+        document.getElementById("demo5").innerHTML += "Array: " + cars;
+    </script>
+</body>
+</html>
+```
+
+This version includes some styling for a better visual experience. Adjustments can be made based on your preferences.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function printpage()
+{
+window.print()
+}
+</script>
+</head>
+<body>
+<h1>The Document Object</h1>
+<h2>The open() Method</h2>
+<button onclick="myFunction()">Try it</button>
+<script> function myFunction() { document.open();
+document.write("<h1>Hello World</h1>");
+document.close();
+}
+</script>
+<input type="button" value="Print this page" onclick="printpage()"/>
+<h1>The Element Object</h1>
+<h2>The focus() and blur() Methods</h2>
+<input type="text" id="myText" value="A text field">
+<p>Click the buttons to give or remove focus from the text field.</p>
+<button type="button" onclick="getFocus()">Get focus</button>
+<button type="button" onclick="loseFocus()">Lose focus</button>
+<script> function getFocus() {
+document.getElementById("myText").focus();
+}
+function loseFocus() {
+document.getElementById("myText").blur();
+}
+</script>
+<h1>The Window Object</h1>
+<h2>The setInterval() Method</h2>
+<p id="demo"></p>
+<script> setInterval(myTimer, 1000); function myTimer() { const date = new Date();
+document.getElementById("demo").innerHTML = date.toLocaleTimeString(); }
+</script>
+</body>
+</html>

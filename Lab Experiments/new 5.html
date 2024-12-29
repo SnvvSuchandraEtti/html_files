@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Experiment 5</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // a. Different types of variables and differences
+    var variableVar = "I am a variable declared with var";
+    let variableLet = "I am a variable declared with let";
+    const variableConst = "I am a variable declared with const";
+
+    // b. Data types with example program
+    let numberExample = 42;
+    let stringExample = "Hello, JavaScript!";
+    let booleanExample = true;
+    let arrayExample = [1, 2, 3];
+    let objectExample = { key: "value" };
+    let nullExample = null;
+    let undefinedExample;
+
+    // c. Pop-up boxes in JavaScript
+    alert("This is an alert box!");
+
+    let userInput = prompt("Please enter something:", "Default Value");
+    let userConfirmed = confirm("Do you want to proceed?");
+
+    // d. Prompt dialogue box to get user information
+    let userName = prompt("Enter your name:");
+    let userAge = prompt("Enter your age:");
+    let userSalary = prompt("Enter your salary:");
+
+    document.write("<h2>User Information</h2>");
+    document.write("<table>");
+    document.write("<tr><th>Name</th><th>Age</th><th>Salary</th></tr>");
+    document.write("<tr><td>" + userName + "</td><td>" + userAge + "</td><td>" + userSalary + "</td></tr>");
+    document.write("</table>");
+
+    document.write("<button onclick='changeColors()'>Change Colors</button>");
+
+    function changeColors() {
+        const body = document.body;
+        const table = document.querySelector('table');
+        const button = document.querySelector('button');
+
+        const randomColor = getRandomColor();
+
+        body.style.backgroundColor = randomColor;
+        table.style.backgroundColor = randomColor;
+        button.style.backgroundColor = getRandomColor();
+        button.style.color = getRandomColor();
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>

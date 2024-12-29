@@ -1,0 +1,19 @@
+<html>
+<body>
+<p id="demo">Happy</p>
+<p id="demo1"></p>
+<button onclick="myFunction()">Open Window</button>
+<script>
+let
+a="javascript";
+document.write("<br>"+a.length+"<br>"); window.name = "myWindow"; document.write(window.name);
+var x = document.getElementById("demo").parentElement.nodeName; document.getElementById("demo").innerHTML = x;
+function myFunction() {
+const y = document.open("", "", "left=700, top=350, width=200, height=100");
+let b = y.screenX;
+let c = y.screenY;
+document.getElementById("demo1").innerHTML = "y.screenX= " + b + "<br>y.screenY= " + c;
+}
+document.write("<br>"+"Hello world!");
+</script>
+</body> </html>

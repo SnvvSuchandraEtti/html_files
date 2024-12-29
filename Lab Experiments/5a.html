@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #282c35;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #4caf50;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .output-container {
+      margin-top: 30px;
+    }
+
+    .output-message {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .alert-icon {
+      font-size: 36px;
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+
+    .console-icon {
+      font-size: 36px;
+      color: #2196f3;
+      margin-bottom: 10px;
+    }
+
+    .page-icon {
+      font-size: 36px;
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Different Ways to Display Output</h1>
+
+  <button onclick="displayOutput()">Show Output</button>
+
+  <div class="output-container">
+    <div class="output-message alert-message">
+      <span class="alert-icon">!</span> Output displayed using alert(): Hello World!
+    </div>
+    <div class="output-message console-message">
+      <span class="console-icon">#</span> Output logged to console: Hello Console!
+    </div>
+    <div class="output-message page-message">
+      <span class="page-icon">+</span> Output added to page using innerHTML: Hello Page!
+    </div>
+  </div>
+
+  <script>
+    function displayOutput() {
+      // Displaying output using different methods
+      var alertMessage = "Output displayed using alert(): Hello World!";
+      alert(alertMessage);
+
+      var consoleMessage = "Output logged to console: Hello Console!";
+      console.log(consoleMessage);
+
+      var innerHTMLMessage = "Output added to page using innerHTML: Hello Page!";
+      console.log(innerHTMLMessage);
+    }
+  </script>
+</body>
+
+</html>

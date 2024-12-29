@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Reversal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #reversedString {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>String Reversal</h1>
+
+<label for="inputString">Enter a string:</label>
+<input type="text" id="inputString" placeholder="Type a string...">
+<button onclick="reverseString()">Reverse</button>
+
+<p>Reversed String: <span id="reversedString"></span></p>
+
+<script>
+function reverseString() {
+    // Get the input string
+    let inputElement = document.getElementById("inputString");
+    let input = inputElement.value.trim();
+
+    // Check if the input is not empty
+    if (input !== "") {
+        // Reverse the string
+        let reversed = input.split('').reverse().join('');
+
+        // Display the reversed string
+        document.getElementById("reversedString").innerText = reversed;
+
+        // Clear the input field
+        inputElement.value = "";
+    } else {
+        alert("Please enter a non-empty string.");
+    }
+}
+
+// Allow triggering the function by pressing Enter
+document.getElementById("inputString").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        reverseString();
+    }
+});
+</script>
+
+</body>
+</html>

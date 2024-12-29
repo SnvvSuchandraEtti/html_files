@@ -1,0 +1,10 @@
+<html>
+<body> <script> let a=10; function f()
+{
+document.write(a);
+}
+f();
+document.write(25);
+</script>
+</body>
+</html>

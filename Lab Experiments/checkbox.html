@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Checkbox Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="checkbox"]:checked+label {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="check1">
+    <label for="check1">Checkbox 1</label>
+
+    <br>
+
+    <input onclick="fun(2)" type="checkbox" id="check2">
+    <label for="check2">Checkbox 2</label>
+
+    <br>
+
+    <input onclick="fun(3)" type="checkbox" id="check3">
+    <label for="check3">Checkbox 3</label>
+
+    <br>
+
+    <input onclick="fun(4)" type="checkbox" id="check4">
+    <label for="check4">Checkbox 4</label>
+
+    <script>
+        function fun(val) {
+            for (let i = 1; i <= val; i++) {
+                var checkbox = document.getElementById('check' + i);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

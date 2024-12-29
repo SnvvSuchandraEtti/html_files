@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Objects</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .output {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .result {
+      color: #2196f3;
+      font-weight: bold;
+    }
+
+    .code {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+      margin: 20px;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Display Objects</h1>
+
+  <div class="output">
+    <p>Enter a number:</p>
+    <input type="number" id="userInput" />
+    <button onclick="displayObjects()">Display Objects</button>
+    <div class="code">
+      <pre id="codeOutput"></pre>
+    </div>
+  </div>
+
+  <script>
+    function displayObjects() {
+      const userInput = document.getElementById('userInput').value;
+      const number = parseInt(userInput);
+
+      function calculateFactorial(n) {
+        if (n === 0 || n === 1) {
+          return 1;
+        } else {
+          return n * calculateFactorial(n - 1);
+        }
+      }
+
+      function generateFibonacciSeries(limit) {
+        const fibonacciSeries = [0, 1];
+        for (let i = 2; i <= limit; i++) {
+          fibonacciSeries.push(fibonacciSeries[i - 1] + fibonacciSeries[i - 2]);
+        }
+        return fibonacciSeries;
+      }
+
+      function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      function getPrimeNumbersUpTo(limit) {
+        const primes = [];
+        for (let i = 2; i <= limit; i++) {
+          if (isPrime(i)) {
+            primes.push(i);
+          }
+        }
+        return primes;
+      }
+
+      function isPalindrome(str) {
+        const reversedStr = str.split('').reverse().join('');
+        return str === reversedStr;
+      }
+
+      const result = {
+        factorial: calculateFactorial(number),
+        fibonacciSeries: generateFibonacciSeries(number),
+        primeNumbers: getPrimeNumbersUpTo(number),
+        isPalindrome: isPalindrome(number.toString())
+      };
+
+      const codeOutput = document.getElementById('codeOutput');
+      codeOutput.textContent = `
+        Factorial: ${result.factorial}
+        Fibonacci Series: ${result.fibonacciSeries.join(', ')}
+        Prime Numbers: ${result.primeNumbers.join(', ')}
+        Palindrome: ${result.isPalindrome ? 'Yes' : 'No'}
+      `;
+    }
+  </script>
+</body>
+
+</html>

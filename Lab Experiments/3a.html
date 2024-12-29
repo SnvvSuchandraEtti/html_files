@@ -1,0 +1,26 @@
+<html>
+<body>
+<title>MY TITLE</title>
+<h1>Java Script window object</h1>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<script>
+document.getElementById("demo").innerHTML = document.title;
+let url = document.URL;
+document.getElementById("demo1").innerHTML = url;
+let allCookies = document.cookie;
+document.getElementById("demo2").innerHTML = allCookies;
+let text = document.lastModified;
+document.getElementById("demo3").innerHTML = text;
+let myDomain = document.domain; document.getElementById("demo4").innerHTML = myDomain; document.getElementById("demo5").innerHTML = document.readyState;
+</script>
+</body>
+</html>
+
+
+
+

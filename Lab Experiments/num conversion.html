@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Webinar Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://source.unsplash.com/random');
+            background-size: cover;
+            animation: gradientChange 10s infinite;
+        }
+
+        @keyframes gradientChange {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #result {
+            font-size: 36px;
+            color: #4285f4;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #result:hover {
+            transform: scale(1.05);
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3a79c4;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Calculator</h1>
+
+    <script>
+        const num1 = parseInt(prompt("Enter the first number"));
+        const num2 = parseInt(prompt("Enter the second number"));
+        const result = num1 + num2;
+
+        document.write('<div id="result">' + result + '</div>');
+    </script>
+
+    <footer>
+        Made for you!
+    </footer>
+</body>
+
+</html>

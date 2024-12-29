@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Object Operations - Hogwarts Edition</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        strong {
+            color: #007BFF;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Object Operations - Hogwarts Edition</h1>
+    <script>
+        var wizards = ["Harry", "Hermione", "Ron"];
+        document.write("<strong>Initial Wizards:</strong> " + wizards + "<br>");
+
+        wizards.push("Dumbledore");
+        document.write("<strong>After Adding Dumbledore:</strong> " + wizards + "<br>");
+
+        document.write("<strong>After Reversing:</strong> " + wizards.reverse() + "<br>");
+
+        document.write("<strong>After Joining with '-':</strong> " + wizards.join("-") + "<br>");
+
+        var moreWizards = ["Snape", "Luna", "Neville"];
+        document.write("<strong>After Concatenating More Wizards:</strong> " + wizards.concat(moreWizards) + "<br>");
+
+        document.write("<strong>Includes 'Voldemort'?</strong> " + wizards.includes("Voldemort") + "<br>");
+
+        var magicalCreatures = ["Hippogriff", "Phoenix", "Thestral", "Basilisk"];
+        magicalCreatures.shift();
+        document.write("<strong>After Shifting Creatures:</strong> " + magicalCreatures + "<br>");
+
+        magicalCreatures.unshift("Dragon");
+        document.write("<strong>After Adding Dragon:</strong> " + magicalCreatures + "<br>");
+
+        wizards.pop();
+        document.write("<strong>After Pop:</strong> " + wizards + "<br>");
+
+        document.write("<strong>After Filling with 'House Elf':</strong> " + wizards.fill("House Elf") + "<br>");
+
+        magicalCreatures[magicalCreatures.length] = "Mermaid";
+        document.write("<strong>Updated Length:</strong> " + magicalCreatures + "<br>");
+
+        magicalCreatures.splice(2, 0, "Boggart", "Grindylow");
+        document.write("<strong>After Adding Boggart and Grindylow:</strong> " + magicalCreatures + "<br>");
+
+        var fantasticBeasts = magicalCreatures.slice(1);
+        document.write("<strong>Sliced Fantastic Beasts:</strong> Original: " + magicalCreatures + "<br> Sliced: " + fantasticBeasts + "<br>");
+
+        magicalCreatures.sort();
+        document.write("<strong>After Sorting Creatures:</strong> " + magicalCreatures + "<br>");
+    </script>
+</body>
+</html>
